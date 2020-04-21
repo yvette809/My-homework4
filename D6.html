@@ -1,0 +1,176 @@
+<html>
+  <head>
+
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class = "str">
+      <h1 id = "tit" onclick="makeItClickable()">This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </div>
+
+    <div>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a href="strive.school">This link goes to Strive School</a>
+
+      <div>
+        <p>This text is just for the exercise</p>
+      </div>
+    </div>
+
+    <div>
+      <p>And this text is just for the exercise too!</p>
+    </div>
+    
+    <script>
+      /* EXERCISE 1
+            Write a function to change the document title of the page in something else
+            */
+
+      function changeTitle() {
+        let newTitle = document.querySelector('#tit').innerText = 'Awesome Strive school';
+        console.log(newTitle);
+      };
+      window.onload = changeTitle();
+    
+
+      /* EXERCISE 2
+            Write a function to change the class of the H1 on a page in "myHeading"
+            */
+
+      function addClassToHeading() {
+        let newClass = document.querySelector('h1');
+        console.log(newClass);
+        newClass.classList.add('first-heading');
+      }
+      window.onload = addClassToHeading();
+
+      /* EXERCISE 3
+            Write a function to change the text of only the p which are child of a div
+            */
+
+      function changePcontent() {
+      let changeP = document.querySelectorAll('div p');
+      changeP.forEach(p=> {
+      changeP.innerText ='we are strivers';
+      console.log(changeP.innerText);
+      })
+        
+      }
+      window.onload = changePcontent();
+
+      /* EXERCISE 4
+            Write a function to change the destination of every link to https://www.google.com
+            */
+
+      function changeUrls() {
+        let urls = document.querySelector('a');
+        urls.innerHTML = 'https://www.google.com';
+        console.log(urls);
+      }
+      window.onload = changeUrls();
+
+      /* EXERCISE 5
+            Write a function to add a new item ONLY to the second list
+            */
+
+      function addToTheSecond() {
+        let newList = document.createElement('li');
+        newList.innerText = '4th';
+        console.log(newList);
+        let parent = document.querySelector('#secondList');
+      parent.appendChild(newList);
+        
+      }
+      
+      window.onload = addToTheSecond();
+      
+
+      /* EXERCISE 6
+           Write a function to add a second paragraph to the div
+            */
+
+      function addParagraph() {
+      let newPara = document.createElement('p')
+      newPara.innerText = 'At Strive school, excellence is our top-priority';
+      console.log(newPara)
+      let parent = document.querySelector('.str')
+      parent.appendChild(newPara);
+      }
+      window.onload = addParagraph();
+
+      /* EXERCISE 7
+           Write a function to make the first UL disappear
+            */
+
+      function firstUlDisappear() {
+        let firstUl = document.querySelector('#firstList');
+        firstUl.style.display = 'none';
+        console.log(firstUl)
+      }
+      window.onload = firstUlDisappear();
+
+      /* EXERCISE 8
+            Write a function to make the background of every UL green
+            */
+
+      function paintItGreen() {
+        let ulBack = document.querySelectorAll('ul')
+        ulBack.forEach(ul => {
+          console.log(ulBack);
+          ul.style.backgroundColor= 'green';
+        
+        });
+      };
+      window.onload = paintItGreen();
+
+      /* EXERCISE 9
+            Make the heading of the page changing color every time the user clicks on it
+            */
+
+      function makeItClickable() {
+        let myColors = ['red', 'green','blue']
+        for( let i = 0; i < myColors.length; i++){
+          console.log(myColors[i]);
+          var clickH = document.querySelector('h1');
+          console.log(clickH)
+          clickH.style.color = myColors[i]
+        }    
+        
+      }
+    
+
+      /* EXERCISE 10
+          Create a new welcome alert message when the page successfully loads
+            */
+
+       function alertM () {
+        alert('welcome strivers');
+      }
+      
+      window.onload = alertM;
+
+      /* EXERCISE 11
+            Use HTML5 tags to divide sections, headers etc 
+            */
+    </script>
+   
+  </body>
+</html>
