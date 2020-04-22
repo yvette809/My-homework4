@@ -146,12 +146,11 @@
             */
 
       function makeItClickable() {
-        let myColors = ['red', 'green','blue']
+        let myColors = ['red', 'green','blue','yellow','orange','black']
         for( let i = 0; i < myColors.length; i++){
-          console.log(myColors[i]);
+          let random = Math.floor(Math.random() *myColors.length);
           var clickH = document.querySelector('h1');
-          console.log(clickH)
-          clickH.style.color = myColors[i]
+          clickH.style.color = myColors[random]
         }    
         
       }
